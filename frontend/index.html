@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emoji-Glyph</title>
+</head>
+<body>
+  <nav class="Nav">
+    <div>
+      <h1>Emoji-Glyph</h1>
+      <h5>Leave your Mark!</h5>
+    </div>
+  </nav>
+  <div style="display: flex;">
+    <div>
+      <emoji-picker class="light"></emoji-picker>
+      <input id="emoji-input" type="text" name="glyph" readonly style="font-size: 24px; text-align: center;">
+      <input type="button" value="Submit" onclick="addEmojiToList()">
+    </div>
+    <div>
+      <ul id="emoji-list"></ul>
+    </div>
+  </div>
+
+  <script>
+    const emojiInput = document.getElementById('emoji-input');
+    const emojiList = document.getElementById('emoji-list');
+
+    // Append each selected emoji to the input field
+    document.querySelector('emoji-picker').addEventListener('emoji-click', (event) => {
+      emojiInput.value += event.detail.unicode;
+    });
+
+    // Add the entire emoji sequence to the list
+    function addEmojiToList() {
+      if (emojiInput.value) {
+        const listItem = document.createElement('li');
+        listItem.textContent = emojiInput.value;
+        emojiList.appendChild(listItem);
+        emojiInput.value = '';
+      }
+    }
+  </script>
+
+  <style>
+    .Nav {
+      padding: 25px;
+      height: 25dvh;
+      background-image: url(/emoji-glyph-nav-BG.png);
+      background-size: 100% 100%; /* Stretches the image to fit the container */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+  </style>
+</body>
+</html>
