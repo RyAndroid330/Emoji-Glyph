@@ -2,17 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [emoji, setEmoji] = useState(''); // State to store selected emojis
-  const [emojiList, setEmojiList] = useState([]); // State to store the list of emojis
-  const emojiPickerRef = useRef(null); // Reference to the emoji picker
+  const [emoji, setEmoji] = useState('');
+  const [emojiList, setEmojiList] = useState([]);
+  const emojiPickerRef = useRef(null);
 
   useEffect(() => {
     // Add event listener for emoji-click event
     const handleEmojiClick = (event) => {
       const { detail } = event;
-      console.log('Emoji object received:', detail); // Log the received emoji object
+      console.log('Emoji object received:', detail);
       if (detail && detail.unicode) {
-        setEmoji((prevEmojis) => prevEmojis + detail.unicode); // Concatenate the new emoji
+        setEmoji((prevEmojis) => prevEmojis + detail.unicode);
       }
     };
 
@@ -27,8 +27,8 @@ function App() {
 
   function addEmojiToList() {
     if (emoji) {
-      setEmojiList((prevList) => [...prevList, emoji]); // Add the current emoji string to the list
-      setEmoji(''); // Clear the input after submission
+      setEmojiList((prevList) => [...prevList, emoji]);
+      setEmoji('');
     }
   }
 
@@ -42,13 +42,12 @@ function App() {
       </nav>
       <div className="mainHolder">
         <div>
-          <emoji-picker ref={emojiPickerRef}></emoji-picker>{' '}
-          {/* Use the emoji picker */}
+          <emoji-picker ref={emojiPickerRef}></emoji-picker>
           <input
             id="emoji-input"
             type="text"
             name="glyph"
-            value={emoji} // Bind input value to emoji state
+            value={emoji}
             readOnly
             style={{ fontSize: '24px', textAlign: 'center' }}
           />
@@ -57,7 +56,7 @@ function App() {
         <div>
           <ul id="emoji-list">
             {emojiList.map((item, index) => (
-              <li key={index}>{item}</li> // Render each emoji string as a list item
+              <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
