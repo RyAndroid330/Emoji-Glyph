@@ -8,5 +8,10 @@ export default defineConfig({
     rollupOptions: {
       external: ['emoji-picker-react'],
     },
+    server: {
+      proxy: {
+        '/api': 'http://localhost:3000',
+      },
+    },
   },
 });
