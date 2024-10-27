@@ -1,20 +1,12 @@
 .Nav {
-  width: 95dvw;
-  padding: 0px;
-  margin-bottom: 10px;
+  width: 100dvw;
   height: 25dvh;
+  padding-left: 20px;
   background-image: url(/emoji-glyph-nav-BG.png);
   background-size: 100% 100%;
-  background-position: center;
   background-repeat: no-repeat;
   color: dimgray;
 }
-
-.container {
-  display: flex;
-  align-items: flex-start;
-}
-
 .emoji-picker {
   margin-right: 20px;
 }
@@ -22,9 +14,14 @@
 #emoji-list {
   list-style-type: none;
   padding: 20px;
+  margin-left: 20px;
+  border-radius: 30px;
   font-size: xx-large;
+  max-height: 350px;
+  min-width: 50dvw;
+  overflow-y: auto;
+  background-color: dimgrey;
 }
 .mainHolder {
   display: flex;
-  /* justify-content: space-between; */
 }
