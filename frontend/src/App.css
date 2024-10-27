@@ -1,0 +1,30 @@
+.Nav {
+  width: 95dvw;
+  padding: 0px;
+  margin-bottom: 10px;
+  height: 25dvh;
+  background-image: url(/emoji-glyph-nav-BG.png);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: dimgray;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.emoji-picker {
+  margin-right: 20px;
+}
+
+#emoji-list {
+  list-style-type: none;
+  padding: 20px;
+  font-size: xx-large;
+}
+.mainHolder {
+  display: flex;
+  /* justify-content: space-between; */
+}
