@@ -9,7 +9,7 @@
 }
 .emoji-picker {
   margin-right: 20px;
-  margin-left: 30px;
+  margin-left: 100px;
 }
 
 #emoji-list {
@@ -25,4 +25,5 @@
 }
 .mainHolder {
   display: flex;
+  margin-left: 20px;
 }
