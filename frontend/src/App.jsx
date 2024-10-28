@@ -30,7 +30,6 @@ function App() {
         const response = await fetch('/api');
         if (response.ok) {
           const data = await response.json();
-          // Map to include both id and emojis
           setEmojiList(
             data.map((item) => ({ id: item.id, emojis: item.emojis }))
           );
@@ -46,7 +45,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Scroll to the bottom of the emoji list whenever it updates
     if (emojiListRef.current) {
       emojiListRef.current.scrollbottom = emojiListRef.current.scrollHeight;
     }
@@ -64,11 +62,9 @@ function App() {
         });
 
         if (response.ok) {
-          // Fetch the updated list from the database
           const fetchResponse = await fetch('/api');
           if (fetchResponse.ok) {
             const data = await fetchResponse.json();
-            // Map to include both id and emojis
             setEmojiList(
               data.map((item) => ({ id: item.id, emojis: item.emojis }))
             );
@@ -89,11 +85,9 @@ function App() {
         method: 'DELETE',
       });
       if (response.ok) {
-        // Fetch the updated emoji list after deletion
         const fetchResponse = await fetch('/api');
         if (fetchResponse.ok) {
           const data = await fetchResponse.json();
-          // Map to include both id and emojis
           setEmojiList(
             data.map((item) => ({ id: item.id, emojis: item.emojis }))
           );
